@@ -1,21 +1,20 @@
 {
-  "name": "line-liff-v2-starter",
+  "name": "liff-demo",
   "version": "1.0.0",
-  "description": "This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.biz/en/docs/liff/overview/).",
+  "description": "This is a small web application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development node index.js",
     "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/line/line-liff-v2-starter"
   },
   "license": "MIT",
   "dependencies": {
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   }
 }
