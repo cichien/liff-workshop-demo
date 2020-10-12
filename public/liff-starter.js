@@ -105,10 +105,10 @@ function registerButtonHandlers() {
             liff.shareTargetPicker([{
                 'type': 'text',
                 'text': 'Hello, World!'
-            }]).then(
-                // document.getElementById('shareTargetPickerMessage').textContent = "Share target picker was launched."
-            ).catch(function (res) {
-                // document.getElementById('shareTargetPickerMessage').textContent = "Failed to launch share target picker.";
+            }]).then(function (res) {
+                alert(`[${res.status}] Message sent!`);
+            }).catch(function (res) {
+                console.error(res);
             });
         }
     });
