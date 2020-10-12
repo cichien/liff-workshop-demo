@@ -112,8 +112,11 @@ function registerButtonHandlers() {
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
-            // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
-            liff.login({ redirectUri: 'https://localhost:8000'});
+            if (process.env !== 'development') {
+                liff.login();
+            } else {
+                liff.login({ redirectUri: process.env.REDIRECT_URI});
+            }            
         }
     });
 
