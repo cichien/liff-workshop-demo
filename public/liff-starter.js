@@ -170,10 +170,8 @@ function registerButtonHandlers() {
             liff.shareTargetPicker([{
                 'type': 'flex',
                 'contents': memeContent
-            }]).then(
-                // document.getElementById('shareTargetPickerMessage').textContent = "Share target picker was launched."
-            ).catch(function (res) {
-                // document.getElementById('shareTargetPickerMessage').textContent = "Failed to launch share target picker.";
+            }]).catch(function (res) {
+                console.error(res)
             });
         }
     });
