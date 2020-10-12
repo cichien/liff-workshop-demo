@@ -1,4 +1,4 @@
-# LIFF v2 starter app
+# LIFF v2 workshop demo
 
 This is a small web application that demonstrates the basic functionality of the [LINE Front-end Framework (LIFF)](https://developers.line.biz/en/docs/liff/overview/). 
 
