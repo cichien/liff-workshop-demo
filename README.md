@@ -23,7 +23,7 @@ Follow the below instructions to deploy your app using the Heroku button and Nod
 
 ### Deploy the app using 'Deploy to Heroku' button
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/line/liff-demo)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cichien/liff-demo)
 
 1. Click **Deploy to Heroku** above.
 2. On the "Create New App" page in Heroku, fill in the required information.
