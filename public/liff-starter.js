@@ -72,6 +72,7 @@ function initializeApp() {
         document.getElementById('liffLoginButton').disabled = true;
     } else {
         document.getElementById('liffLogoutButton').disabled = true;
+        document.getElementById('shareMeTargetPicker').disabled = true;
     }
 }
 
