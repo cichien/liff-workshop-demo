@@ -21,7 +21,7 @@ window.onload = function() {
                 initializeLiffOrDie(myLiffId);
             })
             .catch(function(error) {
-                document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
+                console.error(error)
             });
     } else {
         myLiffId = defaultLiffId;
@@ -34,11 +34,7 @@ window.onload = function() {
 * @param {string} myLiffId The LIFF ID of the selected element
 */
 function initializeLiffOrDie(myLiffId) {
-    if (!myLiffId) {
-        document.getElementById("liffIdErrorMessage").classList.remove('hidden');
-    } else {
-        initializeLiff(myLiffId);
-    }
+    if (myLiffId) initializeLiff(myLiffId);
 }
 
 /**
@@ -56,7 +52,6 @@ function initializeLiff(myLiffId) {
         })
         .catch((err) => {
             console.log(err)
-            // document.getElementById("liffInitErrorMessage").classList.remove('hidden');
         });
 }
 
