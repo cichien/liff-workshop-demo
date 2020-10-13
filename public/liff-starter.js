@@ -191,7 +191,7 @@ function registerButtonHandlers() {
                                 "contents": [
                                 {
                                     "type": "text",
-                                    "text": "SHUT UP AND",
+                                    "text": topText,
                                     "size": "40px",
                                     "color": "#ffffff",
                                     "weight": "bold",
@@ -225,7 +225,7 @@ function registerButtonHandlers() {
                                 "contents": [
                                 {
                                     "type": "text",
-                                    "text": "TAKE MY MONEY",
+                                    "text": bottomText,
                                     "size": "40px",
                                     "color": "#ffffff",
                                     "style": "normal",
