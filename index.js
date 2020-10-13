@@ -3,11 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const https = require('https');
+const mountRoutes = require('./server/routes');
 const app = express();
 const port = process.env.PORT || 5000;
 const myLiffId = process.env.MY_LIFF_ID;
 const redirectUri = process.env.REDIRECT_URI;
 
+mountRoutes(app);
 app.use(express.static('public'));
 
 app.get('/send-id', function(req, res) {
