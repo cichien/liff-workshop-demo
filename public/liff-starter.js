@@ -171,7 +171,7 @@ function registerButtonHandlers() {
                     "contents": [
                     {
                         "type": "image",
-                        "url": "https://raw.githubusercontent.com/cichien/liff-workshop-demo/master/public/images/meme/shutup.png",
+                        "url": imageUrl,
                         "aspectMode": "cover",
                         "aspectRatio": "1:1",
                         "gravity": "center",
