@@ -98,7 +98,7 @@ function displayIsInClientInfo() {
         document.getElementById('liffLogoutButton').classList.toggle('hidden');
         document.getElementById('isInClientMessage').textContent = 'You are opening the app in the in-app browser of LINE.';
     } else {
-        document.getElementById('shareTargetPicker').classList.toggle('hidden');
+        document.getElementById('shareMeTargetPicker').classList.toggle('hidden');
     }
 }
 
@@ -106,7 +106,7 @@ function displayIsInClientInfo() {
 * Register event handlers for the buttons displayed in the app
 */
 function registerButtonHandlers() {
-    document.getElementById('shareTargetPicker').addEventListener('click', function () {
+    document.getElementById('shareMeTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {
             console.log(PROFILE)
             liff.shareTargetPicker([{
