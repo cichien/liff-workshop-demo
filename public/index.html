@@ -35,6 +35,43 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h1 id="profileName">LIFF MEME</h1>
+                    <div class="meme thumbnail">
+                        <img src="images/meme/shutup.png">
+                        <h1 class="top-caption">SHUT UP AND</h1>
+                        <h1 class="bottom-caption">TAKE MY MONEY</h1>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="tool">
+                        <h3>Create a meme</h3>
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Image URL</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="http(s)://..." />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Top text</label>
+                                <input id="topText" type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Bottom text</label>
+                                <input id="bottomText" type="text" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Share</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script src="liff-starter.js"></script>
     </body>

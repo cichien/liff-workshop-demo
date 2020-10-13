@@ -1,3 +1,38 @@
 .container {
     padding: 20px;
 }
+
+.meme {
+    position: relative;
+}
+
+.meme img {
+    width: 100%;
+    height: auto;
+}
+
+.top-caption,
+.bottom-caption {
+  font-family: Impact, sans-serif;
+  color: #fff;
+  text-shadow: #000 0px 0px 6px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 50px;
+}
+
+.top-caption {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.bottom-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
