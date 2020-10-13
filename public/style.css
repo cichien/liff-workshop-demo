@@ -4,21 +4,23 @@
 
 .meme {
     position: relative;
+    width: 300px;
+    height: 300px;
 }
 
 .meme img {
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .top-caption,
 .bottom-caption {
-  font-family: Impact, sans-serif;
   color: #fff;
-  text-shadow: #000 0px 0px 6px;
-  text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .top-caption {
