@@ -108,7 +108,6 @@ function displayIsInClientInfo() {
 function registerButtonHandlers() {
     document.getElementById('shareMeTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {
-            console.log(PROFILE)
             liff.shareTargetPicker([{
                 'type': 'text',
                 'text': 'Hello, I am ' + PROFILE.displayName
