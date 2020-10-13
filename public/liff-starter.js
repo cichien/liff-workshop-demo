@@ -158,8 +158,8 @@ function registerButtonHandlers() {
         if (!liff.isLoggedIn()) alert('please login in LINE');
 
         const imageUrl = document.getElementById('memeImage').src;
-        const topText = document.getElementById('memeTopCaption').textContent || ' ';
-        const bottomText = document.getElementById('memeBottomCaption').textContent || ' ';
+        const topText = document.getElementById('memeTopCaption').textContent;
+        const bottomText = document.getElementById('memeBottomCaption').textContent;
         liff.shareTargetPicker([{
             'type': 'flex',
             'altText': topText + ' ' + bottomText,
