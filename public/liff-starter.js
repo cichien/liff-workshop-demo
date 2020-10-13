@@ -171,7 +171,7 @@ function registerButtonHandlers() {
                     "contents": [
                     {
                         "type": "image",
-                        "url": imageUrl,
+                        "url": "https://raw.githubusercontent.com/cichien/liff-workshop-demo/master/public/images/meme/shutup.png",
                         "aspectMode": "cover",
                         "aspectRatio": "1:1",
                         "gravity": "center",
@@ -191,7 +191,7 @@ function registerButtonHandlers() {
                                 "contents": [
                                 {
                                     "type": "text",
-                                    "text": topText,
+                                    "text": "SHUT UP AND",
                                     "size": "40px",
                                     "color": "#ffffff",
                                     "weight": "bold",
@@ -199,11 +199,6 @@ function registerButtonHandlers() {
                                     "wrap": true
                                 }
                                 ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": []
                             }
                             ],
                             "spacing": "xs"
@@ -230,7 +225,7 @@ function registerButtonHandlers() {
                                 "contents": [
                                 {
                                     "type": "text",
-                                    "text": bottomText,
+                                    "text": "TAKE MY MONEY",
                                     "size": "40px",
                                     "color": "#ffffff",
                                     "style": "normal",
@@ -241,11 +236,6 @@ function registerButtonHandlers() {
                                     "align": "center"
                                 }
                                 ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": []
                             }
                             ],
                             "spacing": "xs",
