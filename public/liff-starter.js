@@ -116,7 +116,7 @@ function registerButtonHandlers() {
                 'originalContentUrl': PROFILE.pictureUrl,
                 'previewImageUrl': PROFILE.pictureUrl
             }]).then(function (res) {
-                alert('Message sent!');
+                if (res) alert('Message sent!');
             }).catch(function (res) {
                 console.error(res);
             });
