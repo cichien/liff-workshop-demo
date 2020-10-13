@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'development') {
         cert: devCert
     }, app);
     server.listen(8000, function() {
-        console.log(`app listening on port 8000`);
+        console.log(`https listening on port 8000!`);
     });
 }
-app.listen(port, () => console.log(`app listening on port ${port}!`));
+app.listen(port, () => console.log(`http listening on port ${port}!`));
