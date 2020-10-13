@@ -34,7 +34,11 @@ window.onload = function() {
 * @param {string} myLiffId The LIFF ID of the selected element
 */
 function initializeLiffOrDie(myLiffId) {
-    if (myLiffId) initializeLiff(myLiffId);
+    if (myLiffId) {
+        initializeLiff(myLiffId);
+    } else {
+        console.error('please set your liff Id in application!')
+    }
 }
 
 /**
