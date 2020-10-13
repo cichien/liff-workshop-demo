@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
@@ -6,12 +7,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 const myLiffId = process.env.MY_LIFF_ID;
 const redirectUri = process.env.REDIRECT_URI;
-const devCert = fs.readFileSync(
-    path.resolve(__dirname, 'cert/localhost.pem')
-);
-const devKey = fs.readFileSync(
-    path.resolve(__dirname, 'cert/localhost-key.pem')
-);
 
 app.use(express.static('public'));
 
@@ -20,6 +15,12 @@ app.get('/send-id', function(req, res) {
 });
 
 if (process.env.NODE_ENV === 'development') {
+    const devCert = fs.readFileSync(
+        path.resolve(__dirname, 'cert/localhost.pem')
+    );
+    const devKey = fs.readFileSync(
+        path.resolve(__dirname, 'cert/localhost-key.pem')
+    );
     const server = https.createServer({
         key: devKey,
         cert: devCert
