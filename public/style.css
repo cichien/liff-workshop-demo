@@ -1,3 +1,40 @@
 .container {
     padding: 20px;
 }
+
+.campaign {
+    position: relative;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.campaign img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0 ;
+    object-fit: cover;
+}
+
+.campaign h5 {
+    font-weight: bold;
+}
+
+.campaign .card-body {
+    font-size: 14px;
+}
+
+.campaign .form-group {
+    margin-bottom: 0;
+}
+
+.campaign label {
+    color: #aaaaaa;
+}
+
+.campaign .form-control-plaintext {
+    color: #666666;
+}
+
+.campaign .col-sm-9 {
+    padding-left: 0;
+}

@@ -35,6 +35,60 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="campaign card mb-4 shadow-sm">
+                        <img id="placeImage"
+                            src="https://raw.githubusercontent.com/cichien/liff-workshop-demo/master/public/images/campaign/nthu.jpg">
+                        <div class="card-body">
+                            <h5 id="placeName" class="card-title">LIFF Workshop </h5>
+                            <form>
+                                <div class="form-group row">
+                                    <label for="campaignPlace" class="col-sm-3 col-form-label">地點</label>
+                                    <div class="col-sm-9">
+                                        <p class="form-control-plaintext" id="campaignPlace">清華台達館</p>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="campaignTime" class="col-sm-3 col-form-label">時間</label>
+                                    <div class="col-sm-9">
+                                        <p class="form-control-plaintext" id="campaignPlace">11:00 ~ 16:00</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <h3>建立活動</h3>
+                    <form role="form">
+                        <div class="form-group">
+                            <label>活動圖片</label>
+                            <div class="input-group mb-3">
+                                <input type="text" id="inputImageUrl" class="form-control" placeholder="http://..." />
+                                <div class="input-group-append">
+                                    <button id="previewImage" class="btn btn-outline-secondary" type="button">套用</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCampaign">活動名稱</label>
+                            <input id="inputCampaign" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPlace">地點</label>
+                            <input id="inputPlace" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTime">時間</label>
+                            <input id="inputTime" type="text" class="form-control">
+                        </div>
+                        <button type="button" id="shareCampaign" class="btn btn-primary">建立活動並分享</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script src="liff-starter.js"></script>
     </body>
