@@ -150,7 +150,7 @@ function registerButtonHandlers() {
         document.getElementById('memeTopCaption').textContent = event.target.value;
     });
 
-    document.getElementById('bottomText').addEventListener('click', function (event) {
+    document.getElementById('bottomText').addEventListener('keyup', function (event) {
         document.getElementById('memeBottomCaption').textContent = event.target.value;
     });
 
