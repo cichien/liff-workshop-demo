@@ -1,5 +1,6 @@
  // DO NOT CHANGE THIS
 let REDIRECT_URI = "";
+let PROFILE = null;
 
 window.onload = function() {
     const useNodeJS = true;   // if you are not using a node server, set this value to false
@@ -80,6 +81,7 @@ function initializeApp() {
 function displayLiffData() {
     liff.getProfile()
     .then((result) => {
+        PROFILE = result;
         document.getElementById('profileName').textContent = 'Hi, ' + result.displayName;
     })
     document.getElementById('isInClient').textContent = liff.isInClient();
@@ -105,9 +107,14 @@ function displayIsInClientInfo() {
 function registerButtonHandlers() {
     document.getElementById('shareTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {
+            console.log(PROFILE)
             liff.shareTargetPicker([{
                 'type': 'text',
-                'text': 'Hello, World!'
+                'text': 'Hello, I am ' + PROFILE.displayName
+            }, {
+                'type': 'image',
+                'originalContentUrl': PROFILE.pictureUrl,
+                'previewImageUrl': PROFILE.pictureUrl
             }]).then(function (res) {
                 alert(`[${res.status}] Message sent!`);
             }).catch(function (res) {
