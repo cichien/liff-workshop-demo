@@ -1,8 +1,8 @@
- // DO NOT CHANGE THIS
+// DO NOT CHANGE THIS
 let REDIRECT_URI = "";
 let PROFILE = null;
 
-window.onload = function() {
+window.onload = function () {
     const useNodeJS = true;   // if you are not using a node server, set this value to false
     const defaultLiffId = "";   // change the default LIFF value if you are not using a node server
 
@@ -13,15 +13,15 @@ window.onload = function() {
     // otherwise, pass defaultLiffId
     if (useNodeJS) {
         fetch('/send-id')
-            .then(function(reqResponse) {
+            .then(function (reqResponse) {
                 return reqResponse.json();
             })
-            .then(function(jsonResponse) {
+            .then(function (jsonResponse) {
                 myLiffId = jsonResponse.id;
                 REDIRECT_URI = jsonResponse.redirectUri;
                 initializeLiffOrDie(myLiffId);
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.error(error)
             });
     } else {
@@ -81,10 +81,10 @@ function initializeApp() {
 */
 function displayLiffData() {
     liff.getProfile()
-    .then((result) => {
-        PROFILE = result;
-        document.getElementById('profileName').textContent = 'Hi, ' + result.displayName;
-    })
+        .then((result) => {
+            PROFILE = result;
+            document.getElementById('profileName').textContent = 'Hi, ' + result.displayName;
+        })
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
 }
@@ -124,18 +124,18 @@ function registerButtonHandlers() {
     });
 
     // login call, only when external browser is used
-    document.getElementById('liffLoginButton').addEventListener('click', function() {
+    document.getElementById('liffLoginButton').addEventListener('click', function () {
         if (!liff.isLoggedIn()) {
             if (!REDIRECT_URI) {
                 liff.login();
             } else {
                 liff.login({ redirectUri: REDIRECT_URI });
-            }            
+            }
         }
     });
 
     // logout call only when external browse
-    document.getElementById('liffLogoutButton').addEventListener('click', function() {
+    document.getElementById('liffLogoutButton').addEventListener('click', function () {
         if (liff.isLoggedIn()) {
             liff.logout();
             window.location.reload();
@@ -154,7 +154,7 @@ function registerButtonHandlers() {
         document.getElementById('memeBottomCaption').textContent = event.target.value;
     });
 
-     document.getElementById('shareMeme').addEventListener('click', function (event) {
+    document.getElementById('shareMeme').addEventListener('click', function (event) {
         if (!liff.isLoggedIn()) alert('please login in LINE');
 
         const imageUrl = document.getElementById('memeImage').src;
@@ -169,68 +169,68 @@ function registerButtonHandlers() {
                     "type": "box",
                     "layout": "vertical",
                     "contents": [
-                    {
-                        "type": "image",
-                        "url": imageUrl,
-                        "aspectMode": "cover",
-                        "aspectRatio": "1:1",
-                        "gravity": "center",
-                        "size": "300px"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
+                        {
+                            "type": "image",
+                            "url": imageUrl,
+                            "aspectMode": "cover",
+                            "aspectRatio": "1:1",
+                            "gravity": "center",
+                            "size": "300px"
+                        },
                         {
                             "type": "box",
                             "layout": "horizontal",
                             "contents": [
-                            {
-                                "type": "text",
-                                "text": topText,
-                                "size": "40px",
-                                "color": "#ffffff",
-                                "weight": "bold",
-                                "align": "center",
-                                "wrap": true
-                            }
-                            ]
-                        }
-                        ],
-                        "position": "absolute",
-                        "offsetTop": "0px",
-                        "alignItems": "center",
-                        "offsetEnd": "0px",
-                        "offsetStart": "0px",
-                        "paddingTop": "5px"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": topText,
+                                            "size": "40px",
+                                            "color": "#ffffff",
+                                            "weight": "bold",
+                                            "align": "center",
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "position": "absolute",
+                            "offsetTop": "0px",
+                            "alignItems": "center",
+                            "offsetEnd": "0px",
+                            "offsetStart": "0px",
+                            "paddingTop": "5px"
+                        },
                         {
                             "type": "box",
                             "layout": "horizontal",
                             "contents": [
-                            {
-                                "type": "text",
-                                "text": bottomText,
-                                "size": "40px",
-                                "color": "#ffffff",
-                                "style": "normal",
-                                "decoration": "none",
-                                "gravity": "bottom",
-                                "weight": "bold",
-                                "wrap": true,
-                                "align": "center"
-                            }
-                            ]
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "contents": [
+                                        {
+                                            "type": "text",
+                                            "text": bottomText,
+                                            "size": "40px",
+                                            "color": "#ffffff",
+                                            "weight": "bold",
+                                            "wrap": true,
+                                            "align": "center"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "position": "absolute",
+                            "offsetBottom": "0px",
+                            "paddingBottom": "5px",
+                            "alignItems": "center",
+                            "offsetStart": "0px",
+                            "offsetEnd": "0px"
                         }
-                        ],
-                        "position": "absolute",
-                        "offsetBottom": "0px",
-                        "paddingBottom": "5px"
-                    }
                     ],
                     "paddingAll": "0px"
                 }
