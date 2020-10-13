@@ -164,93 +164,75 @@ function registerButtonHandlers() {
             'type': 'flex',
             'altText': topText + ' ' + bottomText,
             'contents': {
-                "type": "bubble",
-                "body": {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                {
+                    "type": "image",
+                    "url": imageUrl,
+                    "aspectMode": "cover",
+                    "aspectRatio": "1:1",
+                    "gravity": "center",
+                    "size": "300px"
+                },
+                {
                     "type": "box",
-                    "layout": "vertical",
+                    "layout": "horizontal",
                     "contents": [
                     {
-                        "type": "image",
-                        "url": imageUrl,
-                        "aspectMode": "cover",
-                        "aspectRatio": "1:1",
-                        "gravity": "center",
-                        "size": "300px"
-                    },
-                    {
                         "type": "box",
                         "layout": "horizontal",
                         "contents": [
                         {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                {
-                                    "type": "text",
-                                    "text": topText,
-                                    "size": "40px",
-                                    "color": "#ffffff",
-                                    "weight": "bold",
-                                    "align": "center",
-                                    "wrap": true
-                                }
-                                ]
-                            }
-                            ],
-                            "spacing": "xs"
+                            "type": "text",
+                            "text": topText,
+                            "size": "40px",
+                            "color": "#ffffff",
+                            "weight": "bold",
+                            "align": "center",
+                            "wrap": true
                         }
-                        ],
-                        "position": "absolute",
-                        "offsetTop": "0px",
-                        "alignItems": "center",
-                        "offsetEnd": "0px",
-                        "offsetStart": "0px",
-                        "paddingTop": "5px"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                {
-                                    "type": "text",
-                                    "text": bottomText,
-                                    "size": "40px",
-                                    "color": "#ffffff",
-                                    "style": "normal",
-                                    "decoration": "none",
-                                    "gravity": "bottom",
-                                    "weight": "bold",
-                                    "wrap": true,
-                                    "align": "center"
-                                }
-                                ]
-                            }
-                            ],
-                            "spacing": "xs",
-                            "alignItems": "center"
-                        }
-                        ],
-                        "position": "absolute",
-                        "offsetBottom": "0px",
-                        "offsetStart": "0px",
-                        "offsetEnd": "0px",
-                        "paddingBottom": "5px"
+                        ]
                     }
                     ],
-                    "paddingAll": "0px"
+                    "position": "absolute",
+                    "offsetTop": "0px",
+                    "alignItems": "center",
+                    "offsetEnd": "0px",
+                    "offsetStart": "0px",
+                    "paddingTop": "5px"
+                },
+                {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": bottomText,
+                            "size": "40px",
+                            "color": "#ffffff",
+                            "style": "normal",
+                            "decoration": "none",
+                            "gravity": "bottom",
+                            "weight": "bold",
+                            "wrap": true,
+                            "align": "center"
+                        }
+                        ]
+                    }
+                    ],
+                    "position": "absolute",
+                    "offsetBottom": "0px",
+                    "paddingBottom": "5px"
                 }
+                ],
+                "paddingAll": "0px"
             }
         }]).then(function (res) {
             alert('Message sent!');
