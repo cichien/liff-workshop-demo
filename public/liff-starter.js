@@ -293,7 +293,7 @@ function registerButtonHandlers() {
                     }
                 }
             }]).then(function (res) {
-                if (res) alert('Message sent!');
+                if (res) alert('活動邀請已成功分享，請至' + liff.permanentLink.createUrl() + '/result.html?campaignId=' + id + '觀看結果');
             }).catch(function (res) {
                 console.error(res);
             });
