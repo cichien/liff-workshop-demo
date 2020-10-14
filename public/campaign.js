@@ -93,6 +93,7 @@ function joinCampaign() {
       } else {
         alert('無法參加');
       }
+      liff.closeWindow();
     })
       
   });
