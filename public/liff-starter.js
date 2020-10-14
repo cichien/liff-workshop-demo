@@ -178,7 +178,7 @@ function registerButtonHandlers() {
         }).then(function (result) {
             return result.json();
         }).then(function (result) {
-            const { id } = result.id;
+            const { id } = result;
             liff.shareTargetPicker([{
                 'type': 'flex',
                 'altText': name,
@@ -271,7 +271,7 @@ function registerButtonHandlers() {
                                 "action": {
                                     "type": "uri",
                                     "label": "參加",
-                                    "uri": "https://liff-workshop-demo.herokuapp.com/" + id + "/join.html?isJoin=true"
+                                    "uri": "https://liff-workshop-demo.herokuapp.com/join.html?isJoin=true&campaignId=" + id
                                 }
                             },
                             {
@@ -281,7 +281,7 @@ function registerButtonHandlers() {
                                 "action": {
                                     "type": "uri",
                                     "label": "不參加",
-                                    "uri": "https://liff-workshop-demo.herokuapp.com/" + id + "/join.html?isJoin=false"
+                                    "uri": "https://liff-workshop-demo.herokuapp.com/join.html?isJoin=false&campaignId=" + id
                                 }
                             },
                             {
