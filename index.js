@@ -2,12 +2,18 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 const https = require('https');
 const mountRoutes = require('./server/routes');
 const app = express();
 const port = process.env.PORT || 5000;
 const myLiffId = process.env.MY_LIFF_ID;
 const redirectUri = process.env.REDIRECT_URI;
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 
 mountRoutes(app);
 app.use(express.static('public'));
