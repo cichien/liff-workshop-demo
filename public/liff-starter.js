@@ -181,7 +181,7 @@ function registerButtonHandlers() {
             const { id } = result.id;
             liff.shareTargetPicker([{
                 'type': 'flex',
-                'altText': campaignName,
+                'altText': name,
                 'contents': {
                     "type": "bubble",
                     "hero": {
