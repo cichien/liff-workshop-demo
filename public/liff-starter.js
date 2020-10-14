@@ -165,6 +165,139 @@ function registerButtonHandlers() {
         const name = document.getElementById('campaignName').textContent || ' ';
         const place = document.getElementById('campaignPlace').textContent || ' ';
         const time = document.getElementById('campaignTime').textContent || ' ';
+        fetch('/campaigns/add', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                place,
+                time
+            })
+        }).then(function (result) {
+            return result.json();
+        }).then(function (result) {
+            const { id } = result.id;
+            liff.shareTargetPicker([{
+                'type': 'flex',
+                'altText': campaignName,
+                'contents': {
+                    "type": "bubble",
+                    "hero": {
+                        "type": "image",
+                        "url": imageUrl,
+                        "size": "full",
+                        "aspectRatio": "20:13",
+                        "aspectMode": "cover",
+                        "action": {
+                            "type": "uri",
+                            "uri": "http://linecorp.com/"
+                        }
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": name,
+                                "weight": "bold",
+                                "size": "xl"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "margin": "lg",
+                                "spacing": "sm",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "Place",
+                                                "color": "#aaaaaa",
+                                                "size": "sm",
+                                                "flex": 1
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": place,
+                                                "wrap": true,
+                                                "color": "#666666",
+                                                "size": "sm",
+                                                "flex": 5
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "Time",
+                                                "color": "#aaaaaa",
+                                                "size": "sm",
+                                                "flex": 1
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": time,
+                                                "wrap": true,
+                                                "color": "#666666",
+                                                "size": "sm",
+                                                "flex": 5
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "sm",
+                        "contents": [
+                            {
+                                "type": "button",
+                                "style": "link",
+                                "height": "sm",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "參加",
+                                    "uri": "https://liff-workshop-demo.herokuapp.com/" + id + "/join.html?isJoin=true"
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "style": "link",
+                                "height": "sm",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "不參加",
+                                    "uri": "https://liff-workshop-demo.herokuapp.com/" + id + "/join.html?isJoin=false"
+                                }
+                            },
+                            {
+                                "type": "spacer",
+                                "size": "sm"
+                            }
+                        ],
+                        "flex": 0
+                    }
+                }
+            }]).then(function (res) {
+                if (res) alert('Message sent!');
+            }).catch(function (res) {
+                console.error(res);
+            });
+        })
     })
 }
 
