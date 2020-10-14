@@ -1,4 +1,4 @@
- // DO NOT CHANGE THIS
+// DO NOT CHANGE THIS
 let REDIRECT_URI = "";
 let PROFILE = null;
 
@@ -141,6 +141,31 @@ function registerButtonHandlers() {
             window.location.reload();
         }
     });
+
+    document.getElementById('previewImage').addEventListener('click', function () {
+        document.getElementById('placeImage').src = document.getElementById('inputImageUrl').value;
+    });
+
+    document.getElementById('inputCampaign').addEventListener('keyup', function (event) {
+        document.getElementById('campaignName').textContent = event.target.value;
+    });
+
+    document.getElementById('inputPlace').addEventListener('keyup', function (event) {
+        document.getElementById('campaignPlace').textContent = event.target.value;
+    });
+
+    document.getElementById('inputTime').addEventListener('keyup', function (event) {
+        document.getElementById('campaignTime').textContent = event.target.value;
+    });
+
+    document.getElementById('shareCampaign').addEventListener('click', function (event) {
+        if (!liff.isLoggedIn()) alert('please login in LINE');
+
+        const imageUrl = document.getElementById('placeImage').src;
+        const name = document.getElementById('campaignName').textContent || ' ';
+        const place = document.getElementById('campaignPlace').textContent || ' ';
+        const time = document.getElementById('campaignTime').textContent || ' ';
+    })
 }
 
 /**
