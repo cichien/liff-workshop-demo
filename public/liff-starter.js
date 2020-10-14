@@ -271,7 +271,7 @@ function registerButtonHandlers() {
                                 "action": {
                                     "type": "uri",
                                     "label": "參加",
-                                    "uri": "https://liff-workshop-demo.herokuapp.com/join.html?isJoin=true&campaignId=" + id
+                                    "uri": liff.permanentLink.createUrl() + "/join.html?isJoin=true&campaignId=" + id
                                 }
                             },
                             {
@@ -281,7 +281,7 @@ function registerButtonHandlers() {
                                 "action": {
                                     "type": "uri",
                                     "label": "不參加",
-                                    "uri": "https://liff-workshop-demo.herokuapp.com/join.html?isJoin=false&campaignId=" + id
+                                    "uri": liff.permanentLink.createUrl() + "/join.html?isJoin=false&campaignId=" + id
                                 }
                             },
                             {
