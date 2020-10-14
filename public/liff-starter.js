@@ -192,7 +192,7 @@ function registerButtonHandlers() {
                         "aspectMode": "cover",
                         "action": {
                             "type": "uri",
-                            "uri": "http://linecorp.com/"
+                            "uri": liff.permanentLink.createUrl()
                         }
                     },
                     "body": {
