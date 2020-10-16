@@ -18,7 +18,7 @@ router.post('/add', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const campaignId = req.params.id;
   try {
-    const { rows } = await db.query('SELECT campaign.name as campaignName, member.name, member.is_join FROM campaign, member WHERE campaign_id = $1 AND campaign.id = $1', [campaignId]);
+    const { rows } = await db.query('SELECT DISTINCT campaign.name as campaignName, member.name, member.is_join FROM campaign LEFT JOIN member WHERE campaign_id = $1 AND campaign.id = $1', [campaignId]);
     console.log(rows);
     res.send(rows);
   } catch (error) {
