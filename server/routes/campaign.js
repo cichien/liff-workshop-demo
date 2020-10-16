@@ -18,9 +18,14 @@ router.post('/add', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const campaignId = req.params.id;
   try {
-    const { rows } = await db.query('SELECT DISTINCT campaign.name as campaignName, member.name, member.is_join FROM campaign LEFT JOIN member ON campaign_id = $1 AND campaign.id = $1', [campaignId]);
-    console.log(rows);
-    res.send(rows);
+    const { rows } = await db.query('SELECT DISTINCT campaign.id, campaign.name as campaignName, member.name, member.is_join FROM campaign LEFT JOIN member ON campaign_id = $1 WHERE campaign.id = $1', [campaignId]);
+    const members = rows.filter((row) => {
+      if (row.name) return row
+    })
+    res.send({
+      campaignName: rows.length > 0 ? rows[0].campaignname : null,
+      members
+    });
   } catch (error) {
     console.error(error.stack);
   }
