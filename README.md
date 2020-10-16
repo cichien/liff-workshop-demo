@@ -1,6 +1,6 @@
 # LIFF v2 workshop demo
 
-This is a demo fo LIFF workshop
+This is a sample for LIFF workshop
 
 ## Deploy
 
