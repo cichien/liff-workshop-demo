@@ -23,8 +23,8 @@
     fetch('/campaigns/' + campaignId).then(function (result){
       return result.json();
     }).then(function (result) {
-      document.getElementById('campaignName').textContent = result[0].campaignname;
-      document.getElementById('memberList').innerHTML = result.map(member =>
+      document.getElementById('campaignName').textContent = result.campaignName;
+      document.getElementById('memberList').innerHTML = result.members.map(member =>
         `<li class="list-group-item">${member.name} ${member.is_join ? '參加' : '不參加'}</li>`
       ).join('');
     });
