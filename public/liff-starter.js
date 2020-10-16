@@ -1,8 +1,8 @@
- // DO NOT CHANGE THIS
+// DO NOT CHANGE THIS
 let REDIRECT_URI = "";
 let PROFILE = null;
 
-window.onload = function() {
+window.onload = function () {
     const useNodeJS = true;   // if you are not using a node server, set this value to false
     const defaultLiffId = "";   // change the default LIFF value if you are not using a node server
 
@@ -13,16 +13,16 @@ window.onload = function() {
     // otherwise, pass defaultLiffId
     if (useNodeJS) {
         fetch('/send-id')
-            .then(function(reqResponse) {
+            .then(function (reqResponse) {
                 return reqResponse.json();
             })
-            .then(function(jsonResponse) {
+            .then(function (jsonResponse) {
                 myLiffId = jsonResponse.id;
                 REDIRECT_URI = jsonResponse.redirectUri;
                 initializeLiffOrDie(myLiffId);
             })
-            .catch(function(error) {
-                alert(error)
+            .catch(function (error) {
+                console.error(error)
             });
     } else {
         myLiffId = defaultLiffId;
@@ -81,10 +81,10 @@ function initializeApp() {
 */
 function displayLiffData() {
     liff.getProfile()
-    .then((result) => {
-        PROFILE = result;
-        document.getElementById('profileName').textContent = 'Hi, ' + result.displayName;
-    })
+        .then((result) => {
+            PROFILE = result;
+            document.getElementById('profileName').textContent = 'Hi, ' + result.displayName;
+        })
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
 }
@@ -124,18 +124,18 @@ function registerButtonHandlers() {
     });
 
     // login call, only when external browser is used
-    document.getElementById('liffLoginButton').addEventListener('click', function() {
+    document.getElementById('liffLoginButton').addEventListener('click', function () {
         if (!liff.isLoggedIn()) {
             if (!REDIRECT_URI) {
                 liff.login();
             } else {
                 liff.login({ redirectUri: REDIRECT_URI });
-            }            
+            }
         }
     });
 
     // logout call only when external browse
-    document.getElementById('liffLogoutButton').addEventListener('click', function() {
+    document.getElementById('liffLogoutButton').addEventListener('click', function () {
         if (liff.isLoggedIn()) {
             liff.logout();
             window.location.reload();
