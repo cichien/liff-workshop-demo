@@ -1,6 +1,5 @@
 
 // DO NOT CHANGE THIS
-let REDIRECT_URI = "";
 let PROFILE = null;
 
 window.onload = function () {
@@ -19,7 +18,6 @@ window.onload = function () {
       })
       .then(function (jsonResponse) {
         myLiffId = jsonResponse.id;
-        REDIRECT_URI = jsonResponse.redirectUri;
         initializeLiffOrDie(myLiffId);
       })
       .catch(function (error) {
@@ -54,11 +52,7 @@ function initializeLiff(myLiffId) {
     })
     .then(() => {
       if (!liff.isLoggedIn()) {
-        if (!REDIRECT_URI) {
-          liff.login();
-        } else {
-          liff.login({ redirectUri: REDIRECT_URI });
-        }
+        liff.login();    
         return
       }
       joinCampaign();      
