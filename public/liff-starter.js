@@ -1,5 +1,4 @@
  // DO NOT CHANGE THIS
-let REDIRECT_URI = "";
 let PROFILE = null;
 
 window.onload = function() {
@@ -18,7 +17,6 @@ window.onload = function() {
             })
             .then(function(jsonResponse) {
                 myLiffId = jsonResponse.id;
-                REDIRECT_URI = jsonResponse.redirectUri;
                 initializeLiffOrDie(myLiffId);
             })
             .catch(function(error) {
@@ -126,11 +124,7 @@ function registerButtonHandlers() {
     // login call, only when external browser is used
     document.getElementById('liffLoginButton').addEventListener('click', function() {
         if (!liff.isLoggedIn()) {
-            if (!REDIRECT_URI) {
-                liff.login();
-            } else {
-                liff.login({ redirectUri: REDIRECT_URI });
-            }            
+            liff.login();     
         }
     });
 
